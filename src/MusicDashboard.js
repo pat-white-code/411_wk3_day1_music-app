@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import {AppBar, Typography} from '@material-ui/core';
+import {Grid} from '@material-ui/core';
 import './dashboard.css';
 import OnlineToggle from './OnlineToggle';
+import VolumeControl from "./VolumeControl";
+import SoundQuality from './SoundQuality';
 
 class MusicDashboard extends Component {
   state = { 
-    loggedIn: false,
     notifications: []
   }
   logIn = () => {
@@ -14,29 +15,12 @@ class MusicDashboard extends Component {
 
   render() { 
     return (
-      <div>
-        <AppBar position='static' className='navbar'>
-          <Typography>
-            Music Dashboard
-          </Typography>
-        </AppBar>
-      {!this.state.loggedIn ? 
-        <div>
-          <h1>PLEASE LOG IN</h1>
-          <form onSubmit={this.logIn}>
-            <input type='text'></input>
-          </form>
-        </div>
-        :
-        <div>
-          <h1>COMPONENT HERE</h1>
-          <OnlineToggle />
-          <h1>COMPONENT HERE</h1>
-          {/* <VolumeControl /> */}
-          <h1>COMPONENT HERE</h1>
-          {/* <SoundQauality /> */}
-        </div>
-      }
+      <div className='dashboard'>
+        <Grid container spacing={3}>
+          <Grid item lg={4}><OnlineToggle /></Grid>
+          <Grid item lg={4}><VolumeControl /></Grid>
+          <Grid item lg={4}><SoundQuality /></Grid>
+        </Grid>
       </div>
     );
   }
