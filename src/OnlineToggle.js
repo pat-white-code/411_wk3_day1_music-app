@@ -7,8 +7,11 @@ class OnlineToggle extends Component {
   }
 
   toggleOnline = () => {
+    this.state.isOnline && this.props.onOffline();
     this.setState({isOnline: !this.state.isOnline})
   }
+
+
 
   render() { 
     return ( 

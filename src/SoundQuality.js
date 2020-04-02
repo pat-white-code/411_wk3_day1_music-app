@@ -7,8 +7,10 @@ class SoundQuality extends Component {
   }
 
   handleChange = e => {
+    e.target.value === 1 && this.props.onLowQuality()
     this.setState({ level: e.target.value });
   }
+
 
   render() { 
     return ( 

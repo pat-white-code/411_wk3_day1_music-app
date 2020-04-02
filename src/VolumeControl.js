@@ -10,10 +10,11 @@ class VolumeControl extends Component {
       sliderValue: e.target.value
     })
   }
-  handleLess = e => {
+  handleLess = () => {
     this.setState({ sliderValue: this.state.sliderValue - 10 });
   }
-  handleMore = e => {
+  handleMore = () => {
+    this.state.sliderValue > 60 && this.props.onHighVol()
     this.setState({ sliderValue: this.state.sliderValue + 10 });
   }
 
@@ -36,7 +37,7 @@ class VolumeControl extends Component {
             <Grid item><button onClick={this.handleLess}>less</button></Grid>
             <Grid item xs>
             {/* *******Couldn't get this to work :( wouldnt event.target.value was null and got error about controlled/uncontrolled components.
-            
+
             <Slider
               value={this.state.sliderValue}
               aria-labelledby="discrete-slider"

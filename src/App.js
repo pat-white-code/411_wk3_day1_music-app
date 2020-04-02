@@ -3,6 +3,7 @@ import './App.css';
 import MusicDashboard from './MusicDashboard';
 import {AppBar, Typography} from '@material-ui/core';
 import LogIn from './LogIn';
+import NotificationDisplay from './NotificationDisplay'
 
 class App extends Component {
   state = { 
@@ -27,7 +28,9 @@ class App extends Component {
           logIn = {this.logIn}
         />
         :
-        <MusicDashboard />
+        <div>
+          <MusicDashboard />
+        </div>
       }
       </div>
     );
