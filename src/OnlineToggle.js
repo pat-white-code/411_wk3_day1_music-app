@@ -16,20 +16,22 @@ class OnlineToggle extends Component {
   render() { 
     return ( 
       <Card>
-        <CardContent>
-          <Typography>
-            Online Mode
-          </Typography>
-          <Typography>
-            Is this connected to the internet?
-          </Typography>
-          <FormControlLabel control={
-            <Switch 
-              checked={this.state.isOnline}
-              onChange={this.toggleOnline} 
-              color='primary'
-              name='isOnline' />} />
-        </CardContent>
+        <CardActionArea>
+          <CardContent>
+            <Typography>
+              Online Mode
+            </Typography>
+            <Typography>
+              Is this connected to the internet?
+            </Typography>
+            <FormControlLabel control={
+              <Switch 
+                checked={this.state.isOnline}
+                onChange={this.toggleOnline} 
+                color='primary'
+                name='isOnline' />} />
+          </CardContent>
+        </CardActionArea>
       </Card>
     );
   }

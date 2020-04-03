@@ -33,33 +33,35 @@ class VolumeControl extends Component {
     return ( 
       <div>
         <Card>
-          <CardContent>
-            <Typography>
-              Master Volume
-            </Typography>
-            <Typography>
-              This controls the Value
-            </Typography>
-            <Grid container spacing={2}>
-              <Grid item><button onClick={this.handleLess}>less</button></Grid>
-              <Grid item xs>
-              {/* *******Couldn't get this to work :( wouldnt event.target.value was null and got error about controlled/uncontrolled components.
-
-              <Slider
-                value={this.state.sliderValue}
-                aria-labelledby="discrete-slider"
-                valueLabelDisplay="auto"
-                step={10}
-                marks
-                min={0}
-                max={100}
-                onChange={this.volumeChange}
-        /> */}
-                <Slider value={this.state.sliderValue} step={10}  onChange={this.onVolumeChange} marks min={0} max={100}/>
+          <CardActionArea>
+            <CardContent>
+              <Typography>
+                Master Volume
+              </Typography>
+              <Typography>
+                This controls the Value
+              </Typography>
+              <Grid container spacing={2}>
+                <Grid item><button onClick={this.handleLess}>less</button></Grid>
+                <Grid item xs>
+                {/* *******Couldn't get this to work :( wouldnt event.target.value was null and got error about controlled/uncontrolled components.
+  
+                <Slider
+                  value={this.state.sliderValue}
+                  aria-labelledby="discrete-slider"
+                  valueLabelDisplay="auto"
+                  step={10}
+                  marks
+                  min={0}
+                  max={100}
+                  onChange={this.volumeChange}
+          /> */}
+                  <Slider value={this.state.sliderValue} step={10}  onChange={this.onVolumeChange} marks min={0} max={100}/>
+                </Grid>
+                <Grid item><button onClick={this.handleMore}>more</button></Grid>
               </Grid>
-              <Grid item><button onClick={this.handleMore}>more</button></Grid>
-            </Grid>
-          </CardContent>
+            </CardContent>
+          </CardActionArea>
         </Card>
       </div>
     );
