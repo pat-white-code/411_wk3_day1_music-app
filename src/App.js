@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import MusicDashboard from './MusicDashboard';
-import {AppBar, Typography} from '@material-ui/core';
+import {AppBar, Typography, Toolbar} from '@material-ui/core';
 import LogIn from './LogIn';
-import NotificationDisplay from './NotificationDisplay'
 
 class App extends Component {
   state = { 
@@ -18,10 +17,12 @@ class App extends Component {
     return ( 
       <div>
       <AppBar position='static' className='navbar'>
+        <Toolbar>
           <Typography>
             Music Dashboard
           </Typography>
-        </AppBar>
+        </Toolbar>
+      </AppBar>
 
       {!this.state.loggedIn ? 
         <LogIn 

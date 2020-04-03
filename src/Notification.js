@@ -6,16 +6,16 @@ class Notification extends Component {
   state = { 
     readStatus: false
   }
-  onRead = (createdAt) => {
+  onRead = () => {
     this.setState({ readStatus: true });
-    this.props.onReadNotification(createdAt)
+    // FIXME: this.props.onReadNotification(createdAt)
   }
 
   render() { 
     const {notification} = this.props;
 
     return ( 
-      <Paper key={notification.createdAt} onClick={()=>this.onRead(notification.createdAt)}>
+      <Paper key={notification.createdAt} onClick={this.onRead}>
           {!this.state.readStatus && (
             <Typography>'*UNREAD*'</Typography>
           )}

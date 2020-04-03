@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Card, Typography, Select, MenuItem } from '@material-ui/core';
+import { Card, Typography, Select, MenuItem, CardContent, CardActionArea } from '@material-ui/core';
 
 class SoundQuality extends Component {
   state = { 
@@ -15,17 +15,19 @@ class SoundQuality extends Component {
   render() { 
     return ( 
       <Card>
-        <Typography>
-          Sound Quality
-        </Typography>
-        <Typography>
-          Control the quality of your sound
-        </Typography>
-        <Select onChange={this.handleChange} defaultValue={3}>
-          <MenuItem value={1}>Low</MenuItem>
-          <MenuItem value={2}>Medium</MenuItem>
-          <MenuItem value={3}>High</MenuItem>
-        </Select>
+        <CardContent>
+          <Typography>Sound Quality</Typography>
+          <Typography>
+            Control the quality of your sound
+          </Typography>
+          <CardActionArea>
+            <Select onChange={this.handleChange} defaultValue={3}>
+              <MenuItem value={1}>Low</MenuItem>
+              <MenuItem value={2}>Medium</MenuItem>
+              <MenuItem value={3}>High</MenuItem>
+            </Select>
+          </CardActionArea>
+        </CardContent>
       </Card>
     );
   }

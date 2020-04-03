@@ -1,17 +1,17 @@
-.navbar {
+/* .navbar {
   padding:10px;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .dashboard{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  padding: 10000px;
 }
 
 .dash-card {
   width: 300px;
   height: 500px;
-}
+} */

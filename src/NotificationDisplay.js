@@ -10,9 +10,9 @@ const NotificationDisplay = (props) => {
           Notification Center
         </Typography>
       </Paper>
-      {props.notifications.map(notification => (
+      {props.notifications.map((notification, index) => (
         <Notification 
-          onReadNotification={props.onReadNotification}
+          key={index}
           notification={notification} />
       ))}
     </div>
@@ -21,12 +21,3 @@ const NotificationDisplay = (props) => {
 
 
 export default NotificationDisplay;
-
-
-{/* <Paper key={notification.createdAt}>
-          {!notification.readStatus && (
-            <Typography>'****'</Typography>
-          )}
-          <Typography>{notification.message}</Typography>
-          <Typography>{moment(notification.createdAt).fromNow()}</Typography>
-        </Paper> */}

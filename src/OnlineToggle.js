@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Card, CardContent, Typography, Switch, FormControlLabel} from '@material-ui/core';
+import {Card, CardContent, Typography, Switch, FormControlLabel, CardActionArea} from '@material-ui/core';
 
 class OnlineToggle extends Component {
   state = { 
