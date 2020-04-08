@@ -14,7 +14,7 @@ class SoundQuality extends Component {
 
   render() { 
     return ( 
-      <Card>
+      <Card raised>
         <CardActionArea>
           <CardContent>
             <Typography>Sound Quality</Typography>

@@ -25,7 +25,7 @@ class VolumeControl extends Component {
   render() { 
     return ( 
       <div>
-        <Card>
+        <Card raised>
           <CardActionArea>
             <CardContent>
               <Typography variant='h6' gutterBottom>

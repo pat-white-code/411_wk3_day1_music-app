@@ -8,5 +8,15 @@
 }
 
 .notification-display {
-  padding: 30px
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border: 1px red solid;
+}
+
+.notification-header {
+  display: flex;
+  align-items: center;
 }

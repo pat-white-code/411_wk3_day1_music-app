@@ -14,21 +14,14 @@ class MusicDashboard extends Component {
     notificationCount: 0
   }
 
-  // FIXME:
-  // onReadNotification = createdAt => {
-  //   let updatedIndex = this.state.notifications.indexOf(notification => notification.createdAt === createdAt)
-  //   this.state.notification[updatedIndex].readNotification()
-  //   this.setState({ notifications: [...this.state.notifications] });
-  // }
-
   onReadNotification = id => {
-    console.log('ID', id)
+    console.log('ID',id)
     let updatedNote = this.state.notifications.filter(notification => notification.id === id)[0];
-    console.log('NOTIFICATION', updatedNote)
     let otherNotifications = this.state.notifications.filter(notification => notification.id !== id);
-    console.log('OTHER NOTIFICATIONS', otherNotifications)
     updatedNote.readStatus = true;
-    this.setState({notifications: [...otherNotifications, updatedNote]})
+    // put notifications back in previous order
+    let updatedNotifications = [...otherNotifications, updatedNote].sort((a, b)=>{return a.id - b.id})
+    this.setState({notifications: updatedNotifications})
   }
 
   onOffline = () => {
@@ -77,12 +70,9 @@ class MusicDashboard extends Component {
             </Grid>
           </Container>
         </div>
-
-        <div className="notification-display">
           <NotificationDisplay 
             onReadNotification={this.onReadNotification} 
             notifications={this.state.notifications}/>
-        </div>
       </div>
     );
   }

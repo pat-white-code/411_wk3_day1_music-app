@@ -19,7 +19,7 @@ const SoundQualityHooks = (props) => {
 
 
   return ( 
-    <Card className={classes.root}>
+    <Card raised className={classes.root}>
       <CardActionArea>
         <CardContent>
           <Typography>Sound Quality</Typography>
