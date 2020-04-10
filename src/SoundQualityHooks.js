@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Card, Typography, Select, MenuItem, CardContent, CardActionArea } from '@material-ui/core';
+import { Card, Typography, Select, MenuItem, CardContent } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -20,19 +20,17 @@ const SoundQualityHooks = (props) => {
 
   return ( 
     <Card raised className={classes.root}>
-      <CardActionArea>
-        <CardContent>
-          <Typography>Sound Quality</Typography>
-          <Typography>
-            Control the quality of your sound
-          </Typography>
-          <Select onChange={handleChange} value={level}>
-            <MenuItem value={1}>Low</MenuItem>
-            <MenuItem value={2}>Medium</MenuItem>
-            <MenuItem value={3}>High</MenuItem>
-          </Select>
-        </CardContent>
-      </CardActionArea>
+      <CardContent>
+        <Typography variant='h6' gutterBottom>Sound Quality</Typography>
+        <Typography variant='subtitle1' gutterBottom>
+          Control the quality of your sound
+        </Typography>
+        <Select onChange={handleChange} value={level}>
+          <MenuItem value={1}>Low</MenuItem>
+          <MenuItem value={2}>Medium</MenuItem>
+          <MenuItem value={3}>High</MenuItem>
+        </Select>
+      </CardContent>
     </Card>
   );
 }

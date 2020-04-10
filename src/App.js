@@ -6,7 +6,7 @@ import LogIn from './LogIn';
 
 class App extends Component {
   state = { 
-    loggedIn: true
+    loggedIn: false
   }
 
   logIn = () => {
@@ -18,7 +18,7 @@ class App extends Component {
       <div>
       <AppBar position='static' className='navbar'>
         <Toolbar>
-          <Typography>
+          <Typography variant={'h3'}>
             Music Dashboard
           </Typography>
         </Toolbar>
